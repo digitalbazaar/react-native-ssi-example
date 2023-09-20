@@ -1,5 +1,10 @@
+import './shim.js';
+import 'react-native-get-random-values';
+import 'react-native-securerandom';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import {start} from './example.js';
+
 
 export default function App() {
   return (
@@ -9,6 +14,9 @@ export default function App() {
     </View>
   );
 }
+
+
+start();
 
 const styles = StyleSheet.create({
   container: {
