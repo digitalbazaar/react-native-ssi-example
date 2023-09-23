@@ -7,40 +7,40 @@ const documentLoaderConfig = config.documentLoader;
 
 export const documentLoader = async url => {
   const context = CONTEXT_MAP.get(url);
-  if(context) {
+  if (context) {
     return {
       contextUrl: null,
       documentUrl: url,
-      document: context
-    }
+      document: context,
+    };
   }
 
-  if(url.startsWith('https:') && documentLoaderConfig.insecureHttpLoader) {
+  if (url.startsWith('https:') && documentLoaderConfig.insecureHttpLoader) {
     const document = await httpResolve(url);
     return {
       contextUrl: null,
       documentUrl: url,
-      document
-    }
+      document,
+    };
   }
 
-  if(url.startsWith('did:key:')) {
+  if (url.startsWith('did:key:')) {
     const document = await didKeyDriver.get({url});
-    if(document) {
+    if (document) {
       return {
         contextUrl: null,
         documentUrl: url,
-        document
-      }
+        document,
+      };
     }
   }
-  throw new Error('Context not found', url)
-}
+  throw new Error('Context not found', url);
+};
 
 async function httpResolve(url) {
   try {
     return ky.get(url).json();
-  } catch(e) {
+  } catch (e) {
     console.error(e);
     return null;
   }

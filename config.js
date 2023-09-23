@@ -1,9 +1,9 @@
 export const config = {
   documentLoader: {
-    insecureHttpLoader: true
+    insecureHttpLoader: true,
   },
   vcreds: {
-    showCredentialSubjectImage: false,
-    showIssuerImage: false
-  }
+    showCredentialSubjectImage: true,
+    showIssuerImage: true,
+  },
 };
