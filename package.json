@@ -41,7 +41,6 @@
   "overrides": {
     "webview-crypto": "git+https://github.com/digitalbazaar/webview-crypto.git#fix"
   },
-  "private": true,
   "react-native": {
     "_stream_transform": "readable-stream/transform",
     "_stream_readable": "readable-stream/readable",
@@ -57,5 +56,17 @@
     "_stream_duplex": "readable-stream/duplex",
     "_stream_passthrough": "readable-stream/passthrough",
     "stream": "stream-browserify"
-  }
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digitalbazaar/react-native-ssi-example.git"
+  },
+  "author": {
+    "name": "Digital Bazaar, Inc.",
+    "email": "support@digitalbazaar.com",
+    "url": "https://digitalbazaar.com"
+  },
+  "license": "BSD-3-Clause",
+  "homepage": "https://github.com/digitalbazaar/react-native-ssi-example"
 }
