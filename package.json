@@ -1,21 +1,72 @@
 {
-  "name": "react-native-ssi",
+  "name": "react-native-ssi-example",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "postinstall": "npx rn-nodeify --install buffer,process,stream,events,util --hack"
   },
   "dependencies": {
+    "@digitalbazaar/did-method-key": "^5.1.0",
+    "@digitalbazaar/ed25519-signature-2020": "^5.2.0",
+    "@digitalbazaar/ed25519-verification-key-2020": "^4.1.0",
+    "@digitalbazaar/vc": "^6.0.2",
+    "@react-native/metro-config": "^0.72.11",
+    "buffer": "^4.9.2",
+    "events": "^1.1.1",
     "expo": "~49.0.11",
+    "expo-splash-screen": "~0.20.5",
     "expo-status-bar": "~1.6.0",
+    "klona": "^2.0.6",
+    "ky": "^1.0.1",
     "react": "18.2.0",
-    "react-native": "0.72.4"
+    "react-native": "0.72.4",
+    "react-native-get-random-values": "^1.9.0",
+    "react-native-securerandom": "^1.0.1",
+    "react-native-url-polyfill": "^2.0.0",
+    "react-native-webview": "^13.6.0",
+    "react-native-webview-crypto": "^0.0.25",
+    "readable-stream": "^4.4.2",
+    "stream-browserify": "^3.0.0",
+    "text-encoding-polyfill": "^0.6.7",
+    "util": "^0.10.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "rn-nodeify": "^10.3.0"
   },
-  "private": true
+  "overrides": {
+    "webview-crypto": "git+https://github.com/digitalbazaar/webview-crypto.git#fix"
+  },
+  "react-native": {
+    "_stream_transform": "readable-stream/transform",
+    "_stream_readable": "readable-stream/readable",
+    "_stream_writable": "readable-stream/writable",
+    "_stream_duplex": "readable-stream/duplex",
+    "_stream_passthrough": "readable-stream/passthrough",
+    "stream": "stream-browserify"
+  },
+  "browser": {
+    "_stream_transform": "readable-stream/transform",
+    "_stream_readable": "readable-stream/readable",
+    "_stream_writable": "readable-stream/writable",
+    "_stream_duplex": "readable-stream/duplex",
+    "_stream_passthrough": "readable-stream/passthrough",
+    "stream": "stream-browserify"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digitalbazaar/react-native-ssi-example.git"
+  },
+  "author": {
+    "name": "Digital Bazaar, Inc.",
+    "email": "support@digitalbazaar.com",
+    "url": "https://digitalbazaar.com"
+  },
+  "license": "BSD-3-Clause",
+  "homepage": "https://github.com/digitalbazaar/react-native-ssi-example"
 }
